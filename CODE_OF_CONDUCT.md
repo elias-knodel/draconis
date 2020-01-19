@@ -75,5 +75,5 @@ https://www.contributor-covenant.org/faq
 
 <!-- Variables -->
 
-[team-email]: mailto:your-team@mail.com
+[team-email]: mailto:elias.knodel@gmail.com
 [homepage]: https://www.contributor-covenant.org

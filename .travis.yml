@@ -1,2 +1,16 @@
+language: node_js
+node_js:
+  - 12
+  - 12.13.0
+  - 13
+cache:
+  npm: false
+sudo: false
+before_install:
+  - curl -L https://unpkg.com/@pnpm/self-installer | node
+install:
+  - pnpm install
+script:
+  - pnpm t
 notifications:
   email: false
