@@ -3,3 +3,4 @@ token.json
 
 # Ignore folders
 node_modules/
+dist/
