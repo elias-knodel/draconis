@@ -1,0 +1,45 @@
+{
+  "name": "draconis",
+  "version": "0.0.1",
+  "description": "My Discord bot, written in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm run bns",
+    "bns": "pnpm run build && pnpm run start",
+    "clean": "rm -rf ./dist/",
+    "lint": "eslint src/**/*.ts --fix",
+    "compile": "tsc -p tsconfig.json",
+    "build": "pnpm run clean && pnpm run lint && pnpm run compile",
+    "start": "node ./dist/index.js"
+  },
+  "engines": {
+    "pnpm": "4.7.2",
+    "node": "12.13.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elias-knodel/draconis.git"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "discordbot",
+    "discordjs"
+  ],
+  "author": "elias-knodel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elias-knodel/draconis/issues"
+  },
+  "homepage": "https://github.com/elias-knodel/draconis#readme",
+  "devDependencies": {
+    "@types/node": "^13.1.8",
+    "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/parser": "^2.16.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
