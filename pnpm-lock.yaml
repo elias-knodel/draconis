@@ -1,5 +1,7 @@
 dependencies:
   discord.js: 11.5.1
+  dotenv: 8.2.0
+  require.all: 2.0.5
 devDependencies:
   '@types/node': 13.1.8
   '@typescript-eslint/eslint-plugin': 2.16.0_06dd01ff8bc3edf7e85377823fd48c83
@@ -300,6 +302,12 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
+  /dotenv/8.2.0:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -777,6 +785,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-Z+hNr7RAVWxznLPuA7DIh8UNX1j9CDrUQxskw9IrBE1Dxue2lyXT+shqEIeLUjrokxIP8CMy1WkjgG3rTsd5/g==
+  /require.all/2.0.5:
+    dev: false
+    resolution:
+      integrity: sha512-ZJLRSF/WFmg0kIIYb/ub+/6R/XcfU6cDxtULo+wvh5kVj0JXICT3cXHdxFFC71yx8mwPlSYykZ9L5LBR+r6Ipw==
   /resolve-from/4.0.0:
     dev: true
     engines:
@@ -1029,5 +1041,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^2.16.0
   '@typescript-eslint/parser': ^2.16.0
   discord.js: ^11.5.1
+  dotenv: ^8.2.0
   eslint: ^6.8.0
+  require.all: ^2.0.5
   typescript: ^3.7.5

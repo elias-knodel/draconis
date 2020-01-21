@@ -40,6 +40,8 @@
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "require.all": "^2.0.5"
   }
 }
