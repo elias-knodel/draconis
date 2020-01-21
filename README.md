@@ -25,10 +25,10 @@ You can find more information about the project in our **[Wiki][github-wiki]**
 
 ## Build Status
 
-| Branch |Travis CI                         |
-| :----- | :------------------------------: |
-| master |![travis-master][travis-master]   |
-| dev    |![travis-develop][travis-develop] |
+| Branch  |Travis CI                          |
+| :-----  | :-------------------------------: |
+| master  | ![travis-master][travis-master]   |
+| develop | ![travis-develop][travis-develop] |
 
 ## Getting Started:  
 
