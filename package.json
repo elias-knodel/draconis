@@ -13,8 +13,8 @@
     "start": "node ./dist/index.js"
   },
   "engines": {
-    "pnpm": "4.7.2",
-    "node": "12.13.0"
+    "pnpm": "^4.7.2",
+    "node": "^12.13.0"
   },
   "repository": {
     "type": "git",
