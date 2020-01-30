@@ -1,6 +1,6 @@
 {
   "name": "draconis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "My Discord bot, written in TypeScript",
   "main": "./dist/index.js",
   "scripts": {
