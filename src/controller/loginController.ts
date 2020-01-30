@@ -1,27 +1,27 @@
-module.exports.run = (token: any) => {
+module.exports.run = () => {
 
   /* use reqiuire.all */
   require("dotenv").config();
 
   /* set variables */
   const environment = process.env.NODE_ENV;
-  let output: string = "NODE_ENV is valid!";
+  let output: any;
 
   /* login selector */
-  switch (environment) {
-  case "prod":
-    token = process.env.BOT_PROD;
-    break;
-  case "test":
-    token = process.env.BOT_TEST;
-    break;
-  default:
-    output = "NODE_ENV is not valid!";
-    break;
+  try {
+    switch (environment) {
+    case "prod":
+      output = process.env.BOT_PROD;
+      break;
+    case "test":
+      output = process.env.BOT_TEST;
+      break;
+    }
+  } catch (error) {
+    console.log(error);
   }
 
   /* log output */
-  console.log(output);
-  return token;
+  return output;
 
 };

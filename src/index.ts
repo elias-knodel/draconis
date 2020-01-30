@@ -18,12 +18,9 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg: any) => {
-  if (msg.content === "ping") {
-    msg.reply("Pong!");
-  }
+  events.message.run(client, msg);
 });
 
 /* login bot */
-let token: any;
-token = controller.loginController.run(token);
+let token: any = controller.loginController.run();
 client.login(token);
