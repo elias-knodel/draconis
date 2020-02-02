@@ -13,8 +13,8 @@ Note that you must use one of our issue templates that your issue is valid - val
 Before you create an issue, search for your subject and be sure to not create a duplicate. Always provide a clear and concise explanation of your matter of concern.
 
 ### Security issues
-If you find some really serious security issue, please don't create a GitHub issue for it in the first line - it could put all bots based on this dcc onto risk.
-Send a mail to p.zarrad@outlook.de instead, to keep it structured you can simply copy our bug template into your mail.
+If you find some really serious security issue, please don't create a GitHub issue for it in the first line - it could put all bots based on this repository onto risk.
+Send a mail to [this address][team-email] instead, to keep it structured you can simply copy our bug template into your mail.
 
 ## Contributing code
 Code contributions are great because they allow anyone to contribute to their favorite projects - in addition they help us to make progress. But there're some things to keep in mind when contributing code. You grant us a perpetual license to use your code under the MIT license in the moment you contribute something to this project. This contributing code section covers all defined standards that have nothing to do with or coding standards, as they are separated from our contribution guide - but we recommended to read them, as code that not follows them will be rejected.
@@ -70,3 +70,7 @@ As you read this contribution guidelines, the code of conduct and most important
 We really appreciate your work spent on contributions to our project, as people like you make the open source community great :heart:!
 
 If you have some suggestions to this contributing guidelines, feel free to suggest them!
+
+<!-- Variables -->
+
+[team-email]: mailto:elias.knodel@gmail.com
