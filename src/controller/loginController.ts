@@ -1,6 +1,6 @@
 module.exports.run = () => {
 
-  /* use reqiuire.all */
+  /* require env reader */
   require("dotenv").config();
 
   /* set variables */
@@ -10,12 +10,12 @@ module.exports.run = () => {
   /* login selector */
   try {
     switch (environment) {
-    case "prod":
-      output = process.env.BOT_PROD;
-      break;
-    case "test":
-      output = process.env.BOT_TEST;
-      break;
+      case "prod":
+        output = process.env.BOT_PROD;
+        break;
+      case "test":
+        output = process.env.BOT_TEST;
+        break;
     }
   } catch (error) {
     console.log(error);

@@ -4,18 +4,19 @@ module.exports.run = (client: any) => {
   const packageJson = require("../../package.json");
 
   /* set variables */
-  let output: string = "Logged in as " + client.user.tag + " on " + client.guilds.size + " Servers!";
-  let output2: string = "https://discordapp.com/oauth2/authorize/?permissions=536014032&scope=bot&client_id=" + client.user.id;
+  const output: string = "Logged in as " + client.user.tag + " on " + client.guilds.size + " Servers!";
+  const output2: string = "https://discordapp.com/oauth2/authorize/?permissions=536014032&scope=bot&client_id="
+    + client.user.id;
 
-  let restartTime: number = 1;
-  let statusTime: number = 360;
+  const restartTime = 1;
+  const statusTime = 360;
 
   /* set activities */
   const activities: string[] = [
-    ".help | on " + client.guilds.size + " discords!",
-    ".help | also try .info",
-    ".help | try my auto channel!",
-    ".help | pet system comming soon"
+    ".help | on " + client.guilds.size + " discords",
+    ".help | music commands coming soon",
+    ".help | auto channel coming soon",
+    ".help | pet system coming soon"
   ];
 
   /* set bot status and activity */
@@ -24,6 +25,15 @@ module.exports.run = (client: any) => {
     type: "PLAYING"
   });
 
+  /* get random status from array */
+  function randomStatus() {
+    const i: number = Math.floor(Math.random() * activities.length);
+    client.user.setActivity(activities[i], {
+      type: "LISTENING"
+    });
+  }
+
+  /* make timeout */
   setTimeout(() => {
 
     /* change status for first 6h */
@@ -36,14 +46,6 @@ module.exports.run = (client: any) => {
     }, 1000 * 60 * statusTime);
 
   }, 1000 * 60 * restartTime);
-
-  /* get random status from array */
-  function randomStatus() {
-    let i: number = Math.floor(Math.random() * activities.length);
-    client.user.setActivity(activities[i], {
-      type: "LISTENING"
-    });
-  }
 
   /* log output */
   console.log(output + "\n" + output2);
