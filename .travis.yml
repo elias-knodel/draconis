@@ -5,7 +5,8 @@ node_js:
   - 13
 cache:
   npm: false
-sudo: false
+os:
+  - linux
 before_install:
   - curl -L https://unpkg.com/@pnpm/self-installer | node
 install:

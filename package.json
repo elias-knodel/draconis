@@ -1,6 +1,6 @@
 {
   "name": "draconis",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "My Discord bot, written in TypeScript",
   "main": "./dist/index.js",
   "scripts": {
@@ -13,8 +13,8 @@
     "start": "node ./dist/index.js"
   },
   "engines": {
-    "pnpm": "4.7.2",
-    "node": "12.13.0"
+    "pnpm": "^4.9.0",
+    "node": "^12.13.0"
   },
   "repository": {
     "type": "git",
@@ -35,11 +35,21 @@
   "devDependencies": {
     "@types/node": "^13.1.8",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.18.0",
     "@typescript-eslint/parser": "^2.16.0",
     "eslint": "^6.8.0",
+    "tslint": "^6.0.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "bufferutil": "^4.0.1",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "erlpack": "^0.1.3",
+    "ffmpeg": "^0.0.4",
+    "libsodium-wrappers": "^0.7.6",
+    "opusscript": "^0.0.7",
+    "require.all": "^2.0.5",
+    "ytdl-core": "^1.0.7"
   }
 }
