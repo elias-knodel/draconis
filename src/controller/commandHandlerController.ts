@@ -6,6 +6,7 @@ module.exports.run = () => {
   /* make new collection */
   const botCommands = new Collection();
   const botAliases = new Collection();
+  const categoryCollection: Collection<string, string[]> = new Collection();
 
   /* read folder in which commands are saved */
   fs.readdir("./dist/commands/", (err: Error | null, files: string[]) => {
@@ -25,6 +26,15 @@ module.exports.run = () => {
       /* add the plain commands to your collection */
       botCommands.set(props.help.name, props);
 
+      /* add the plain command categorys to your collection */
+      props.help.categories.forEach((i: string) => {
+        if (categoryCollection.get(i)) {
+          categoryCollection.get(i)?.push(props.help.name);
+        } else {
+          categoryCollection.set(i, [props.help.name]);
+        }
+      });
+
       /* add the aliases to your discord collection */
       props.help.alias.forEach((i: string) => {
         botAliases.set(i, props);
@@ -37,7 +47,8 @@ module.exports.run = () => {
 
   const collections = {
     botCommands,
-    botAliases
+    botAliases,
+    categoryCollection
   };
 
   return collections;

@@ -13,5 +13,9 @@ module.exports.help = {
     "ping",
     "pong"
   ],
-  description: "This command is only for testing."
+  categories: [
+    "administration"
+  ],
+  description: "This command is for testing.",
+  usage: ".ping <mention somebody you want to disturb>"
 };

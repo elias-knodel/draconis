@@ -15,6 +15,7 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
   const botConfig: any = require("../../json/configs/botConfig.json");
 
   let prefixConfigPath: any = "./json/gen/settings/prefixes.json";
+  let prefixConfig: any;
 
   const defaultPrefix: string = botConfig.defaultPrefix;
   let customPrefix: string;
@@ -24,7 +25,7 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
 
     prefixConfigPath = "../." + prefixConfigPath;
 
-    const prefixConfig: any = require(prefixConfigPath);
+    prefixConfig = require(prefixConfigPath);
     customPrefix = prefixConfig[msg.member.guild.id];
 
     if (customPrefix) {
@@ -57,6 +58,7 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
       dcuser,
       commandCollections,
       botConfig,
+      prefixConfig,
       controller
     }
 

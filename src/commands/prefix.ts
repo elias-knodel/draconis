@@ -34,8 +34,11 @@ module.exports.run = (bundle: any) => {
 module.exports.help = {
   name: "prefix",
   alias: [
-    "prefix",
-    "cuspre"
+    "prefix"
   ],
-  description: "This command sets a custom prefix for the Discord."
+  categories: [
+    "administration"
+  ],
+  description: "This command sets a custom prefix for the Discord.",
+  usage: ".prefix <the prefix you want>"
 };
