@@ -1,10 +1,10 @@
 {
   "name": "draconis",
-  "version": "0.0.5",
+  "version": "0.0.4",
   "description": "My Discord bot, written in TypeScript",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "pnpm run build",
+    "test": "pnpm run bns",
     "bns": "pnpm run build && pnpm run start",
     "clean": "rm -rf ./dist/",
     "lint": "eslint src/**/*.ts --fix",
