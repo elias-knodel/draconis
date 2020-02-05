@@ -1,6 +1,6 @@
-import { Collection } from "discord.js";
+import * as fs from "fs";
 
-module.exports.run = (client: any, msg: any, botCommands: Collection<string,any>) => {
+module.exports.run = (client: any, msg: any, commandCollections: any, controller: any) => {
 
   /* declare dcuser */
   let dcuser: any;
@@ -10,29 +10,63 @@ module.exports.run = (client: any, msg: any, botCommands: Collection<string,any>
     dcuser = msg.mentions.users.first();
   }
 
-  const prefix = ".";
-  const args = msg.content.slice(prefix.length).trim().split(" ");
-  const cmd = args.shift().toLowerCase();
+  /* set prefix / custom prefix */
+  let prefix: string;
+  const botConfig: any = require("../../json/configs/botConfig.json");
+
+  let prefixConfigPath: any = "./json/gen/settings/prefixes.json";
+  let prefixConfig: any;
+
+  const defaultPrefix: string = botConfig.defaultPrefix;
+  let customPrefix: string;
+
+  /* if file and custom prefix for bot exists let prefix be custom or not */
+  if(fs.existsSync(prefixConfigPath)) {
+
+    prefixConfigPath = "../." + prefixConfigPath;
+
+    prefixConfig = require(prefixConfigPath);
+    customPrefix = prefixConfig[msg.member.guild.id];
+
+    if (customPrefix) {
+      prefix = customPrefix;
+    } else {
+      prefix = defaultPrefix;
+    }
+
+  } else {
+    prefix = defaultPrefix;
+  }
 
   /* if author is bot or type is dm return */
   if (msg.author.bot) return;
   if (msg.channel.type === "dm") return;
 
-  /* Command Handler 2 */
-  if (msg.content.startsWith(prefix)) {
+  /* if the command starts with the prefix */
+  if (msg.content.startsWith(prefix) || msg.content.startsWith(defaultPrefix)) {
 
-    // get commands and execute it
-    const commandfile = botCommands.get(cmd);
+    /* split arguments and declare args */
+    if (msg.content.startsWith(defaultPrefix)) prefix = defaultPrefix;
+    const args = msg.content.slice(prefix.length).trim().split(" ");
+    const cmd = args.shift().toLowerCase();
 
+    /* make bundle with all modules you want to use */
     const bundle = {
       client,
       msg,
       args,
       dcuser,
-      botCommands
+      commandCollections,
+      botConfig,
+      prefixConfig,
+      controller
     }
 
-    if (commandfile) commandfile.run(bundle);
+    /* get commands */
+    const commandFile = commandCollections.botAliases.get(cmd);
+
+    /* and run them if they exist */
+    if (commandFile) commandFile.run(bundle);
     if (msg.content.indexOf(prefix) !== 0) return;
   }
 

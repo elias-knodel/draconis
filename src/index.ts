@@ -11,7 +11,7 @@ const events: any = require("require.all")("./events");
 const client: Client = new Client();
 
 /* execute controller */
-const botCommands: Collection<string,any> = controller.commandHandlerController.run(client);
+const commandCollections: Collection<string,any> = controller.commandHandlerController.run(client);
 
 /* bot events */
 client.on("ready", () => {
@@ -19,7 +19,7 @@ client.on("ready", () => {
 });
 
 client.on("message", (msg: any) => {
-  events.message.run(client, msg, botCommands);
+  events.message.run(client, msg, commandCollections, controller);
 });
 
 /* login bot */
