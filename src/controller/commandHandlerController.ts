@@ -3,7 +3,12 @@ import * as fs from "fs";
 
 module.exports.run = () => {
 
+  /* make new collection */
   const botCommands = new Collection();
+  const botAliases = new Collection();
+  const categoryCollection: Collection<string, string[]> = new Collection();
+
+  /* read folder in which commands are saved */
   fs.readdir("./dist/commands/", (err: Error | null, files: string[]) => {
 
     /* if exists log error */
@@ -16,11 +21,23 @@ module.exports.run = () => {
       const cmdFile = e.substr(0, e.length -3);
 
       /* require the files */
-      const props = require(`../commands/${cmdFile}`);
+      const props: any = require(`../commands/${cmdFile}`);
+
+      /* add the plain commands to your collection */
+      botCommands.set(props.help.name, props);
+
+      /* add the plain command categorys to your collection */
+      props.help.categories.forEach((i: string) => {
+        if (categoryCollection.get(i)) {
+          categoryCollection.get(i)?.push(props.help.name);
+        } else {
+          categoryCollection.set(i, [props.help.name]);
+        }
+      });
 
       /* add the aliases to your discord collection */
       props.help.alias.forEach((i: string) => {
-        botCommands.set(i, props);
+        botAliases.set(i, props);
       });
 
       /* log the files which are successfully loaded */
@@ -28,6 +45,12 @@ module.exports.run = () => {
     });
   });
 
-  return botCommands;
+  const collections = {
+    botCommands,
+    botAliases,
+    categoryCollection
+  };
+
+  return collections;
 
 };
