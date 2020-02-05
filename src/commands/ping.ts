@@ -1,7 +1,7 @@
 module.exports.run = (bundle: any) => {
 
   const msg = bundle.msg;
-  const dcuser = bundle.msg;
+  const dcuser = bundle.dcuser;
 
   msg.channel.send(dcuser + " | Pong!");
 
@@ -13,5 +13,9 @@ module.exports.help = {
     "ping",
     "pong"
   ],
-  description: "This command is only for testing."
+  categories: [
+    "administration"
+  ],
+  description: "This command is for testing.",
+  usage: ".ping <mention somebody you want to disturb>"
 };
