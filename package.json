@@ -4,7 +4,7 @@
   "description": "My Discord bot, written in TypeScript",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "pnpm run bns",
+    "test": "pnpm run build",
     "bns": "pnpm run build && pnpm run start",
     "clean": "rm -rf ./dist/",
     "lint": "eslint src/**/*.ts --fix",
