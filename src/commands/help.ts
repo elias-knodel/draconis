@@ -11,7 +11,6 @@ module.exports.run = (bundle: any) => {
 
   const helpEmbed: RichEmbed = new RichEmbed();
   helpEmbed.setColor(bundle.botConfig.colors.red);
-  helpEmbed.setAuthor("Available commands:");
 
   if (customPrefix) {
     helpEmbed.setFooter("Default prefix: " + defaultPrefix + " | Custom server Prefix: " + customPrefix);
@@ -20,18 +19,20 @@ module.exports.run = (bundle: any) => {
   }
 
   if (!args[0]) {
+    helpEmbed.setAuthor("Available commands:");
     helpEmbed.setDescription("Use  `.help <name>`  to get more information of a command!");
-    commandCategory.forEach((i: any) => {
-      helpEmbed.addField(i, i[0], true);
+    commandCategory.keyArray().forEach((i: any) => {
+      helpEmbed.addField(i, commandCategory.get(i), true);
     });
-    console.log(commandCategory);
   } else if (commandHelp.get(args[0]) === undefined) {
-    helpEmbed.setDescription("**Warning** There is no such command like: " + args[0]);
+    helpEmbed.setAuthor("Warning! There is no such command like: " + args[0]);
   } else {
+    helpEmbed.setAuthor("Here are some infos about: " + args[0]);
     const cusHelp = commandHelp.get(args[0]);
-    helpEmbed.addField("**Name**", cusHelp.help.name, true);
-    helpEmbed.addField("**Alias**", cusHelp.help.alias, true);
-    helpEmbed.addField("**Description**", cusHelp.help.description, true);
+    helpEmbed.addField("**Alias(es):**", cusHelp.help.alias, true);
+    helpEmbed.addField("**Categories:**", cusHelp.help.categories, true);
+    helpEmbed.addField("**Description:**", cusHelp.help.description, true);
+    helpEmbed.addField("**Usage:**", cusHelp.help.usage, true);
   }
 
   /* send embed */

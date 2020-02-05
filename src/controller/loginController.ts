@@ -4,21 +4,19 @@ module.exports.run = () => {
   require("dotenv").config();
 
   /* set variables */
-  const environment = process.env.NODE_ENV;
+  const envSystem: any = process.env.NODE_ENV;
+  const envVariable: any = envSystem.toUpperCase();
   let output: any;
 
   /* login selector */
   try {
-    switch (environment) {
-      case "prod":
-        output = process.env.BOT_PROD;
-        break;
-      case "test":
-        output = process.env.BOT_TEST;
-        break;
+    if (envVariable === "TEST") {
+      output = process.env.BOT_TEST;
+    } else if (envVariable === "PROD") {
+      output = process.env.BOT_PROD;
     }
   } catch (error) {
-    console.log(error);
+    console.error(error)
   }
 
   /* log output */
