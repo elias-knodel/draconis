@@ -5,14 +5,13 @@ module.exports.run = () => {
 
   /* set variables */
   const envSystem: any = process.env.NODE_ENV;
-  const envVariable: any = envSystem.toUpperCase();
   let output: any;
 
   /* login selector */
   try {
-    if (envVariable === "TEST") {
+    if (envSystem === "test") {
       output = process.env.BOT_TEST;
-    } else if (envVariable === "PROD") {
+    } else if (envSystem === "test") {
       output = process.env.BOT_PROD;
     }
   } catch (error) {
