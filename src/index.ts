@@ -23,8 +23,7 @@ client.on("message", (msg: any) => {
 });
 
 /* login bot */
-const token: any = controller.loginController.run();
-client.login(token);
+controller.loginController.run(client);
 
 /* available client.on events */
 //  channelCreate

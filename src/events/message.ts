@@ -51,7 +51,7 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
     const cmd = args.shift().toLowerCase();
 
     /* make bundle with all modules you want to use */
-    const bundle = {
+    const bundle: object = {
       client,
       msg,
       args,
