@@ -7,7 +7,7 @@ dependencies:
   libsodium-wrappers: 0.7.6
   opusscript: 0.0.7
   require.all: 2.0.5
-  ytdl-core: 1.0.7
+  ytdl-core: 2.0.0
 devDependencies:
   '@types/node': 13.1.8
   '@typescript-eslint/eslint-plugin': 2.16.0_06dd01ff8bc3edf7e85377823fd48c83
@@ -1241,7 +1241,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
-  /ytdl-core/1.0.7:
+  /ytdl-core/2.0.0:
     dependencies:
       html-entities: 1.2.1
       m3u8stream: 0.6.4
@@ -1249,9 +1249,9 @@ packages:
       sax: 1.2.4
     dev: false
     engines:
-      node: '>=6'
+      node: '>=10'
     resolution:
-      integrity: sha512-gECPN5g5JnSy8hIq11xHIGe1T/Xzy0mWxQin3zhlJ3nG/YjPcEVEejrdd2XmA4Vv2Zw3+b1ZyDjmt37XfZri6A==
+      integrity: sha512-cYdcxXhgldJeOaWaN/mxT+j07XFZdR+qUqfz5eddx4WcyWCha66FfJvmQBOPqyQo1TCyj/IkgZqdGADWlNdTcQ==
 specifiers:
   '@types/node': ^13.1.8
   '@typescript-eslint/eslint-plugin': ^2.16.0
@@ -1268,4 +1268,4 @@ specifiers:
   require.all: ^2.0.5
   tslint: ^6.0.0
   typescript: ^3.7.5
-  ytdl-core: ^1.0.7
+  ytdl-core: ^2.0.0
