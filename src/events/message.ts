@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import { getJsonFile } from "../export/jsonHandler";
 
 module.exports.run = (client: any, msg: any, commandCollections: any, controller: any) => {
 
@@ -12,20 +12,16 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
 
   /* set prefix / custom prefix */
   let prefix: string;
-  const botConfig: any = require("../../json/configs/botConfig.json");
+  const botConfig: any = require("../../json/configs/botconfig.json");
 
-  let prefixConfigPath: any = "./json/gen/settings/prefixes.json";
-  let prefixConfig: any;
+  const prefixConfig: any = getJsonFile("./json/gen/settings/prefixes.json");
 
   const defaultPrefix: string = botConfig.defaultPrefix;
   let customPrefix: string;
 
   /* if file and custom prefix for bot exists let prefix be custom or not */
-  if(fs.existsSync(prefixConfigPath)) {
+  if(prefixConfig[msg.member.guild.id]) {
 
-    prefixConfigPath = "../." + prefixConfigPath;
-
-    prefixConfig = require(prefixConfigPath);
     customPrefix = prefixConfig[msg.member.guild.id];
 
     if (customPrefix) {
@@ -51,7 +47,7 @@ module.exports.run = (client: any, msg: any, commandCollections: any, controller
     const cmd = args.shift().toLowerCase();
 
     /* make bundle with all modules you want to use */
-    const bundle = {
+    const bundle: object = {
       client,
       msg,
       args,

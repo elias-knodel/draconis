@@ -52,5 +52,4 @@ module.exports.run = () => {
   };
 
   return collections;
-
 };

@@ -19,10 +19,17 @@ module.exports.run = (client: any) => {
     ".help | pet system coming soon"
   ];
 
+  enum Activities {
+    PLAYING = "PLAYING",
+    STREAMING = "STREAMING",
+    LISTENING = "LISTENING",
+    WATCHING = "WATCHING"
+  }
+
   /* set bot status and activity */
   client.user.setStatus("dnd");
   client.user.setActivity("launching version " + packageJson.version, {
-    type: "PLAYING"
+    type: Activities.STREAMING
   });
 
   /* get random status from array */

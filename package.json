@@ -50,6 +50,6 @@
     "libsodium-wrappers": "^0.7.6",
     "opusscript": "^0.0.7",
     "require.all": "^2.0.5",
-    "ytdl-core": "^1.0.7"
+    "ytdl-core": "^2.0.0"
   }
 }
