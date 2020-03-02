@@ -10,6 +10,7 @@ dependencies:
   ytdl-core: 2.0.0
 devDependencies:
   '@types/node': 13.1.8
+  '@types/ws': 7.2.2
   '@typescript-eslint/eslint-plugin': 2.16.0_06dd01ff8bc3edf7e85377823fd48c83
   '@typescript-eslint/eslint-plugin-tslint': 2.18.0_042349bae6bb916eea096605cccd2428
   '@typescript-eslint/parser': 2.16.0_eslint@6.8.0+typescript@3.7.5
@@ -48,6 +49,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-6XzyyNM9EKQW4HKuzbo/CkOIjn/evtCmsU+MUM1xDfJ+3/rNjBttM1NgN7AOQvN6tP1Sl1D1PIKMreTArnxM9A==
+  /@types/node/13.7.7:
+    dev: true
+    resolution:
+      integrity: sha512-Uo4chgKbnPNlxQwoFmYIwctkQVkMMmsAoGGU4JKwLuvBefF0pCq4FybNSnfkfRCpC7ZW7kttcC/TrRtAJsvGtg==
+  /@types/ws/7.2.2:
+    dependencies:
+      '@types/node': 13.7.7
+    dev: true
+    resolution:
+      integrity: sha512-oqnI3DbGCVI9zJ/WHdFo3CUE8jQ8CVQDUIKaDtlTcNeT4zs6UCg9Gvk5QrFx2QPkRszpM6yc8o0p4aGjCsTi+w==
   /@typescript-eslint/eslint-plugin-tslint/2.18.0_042349bae6bb916eea096605cccd2428:
     dependencies:
       '@typescript-eslint/experimental-utils': 2.18.0_eslint@6.8.0+typescript@3.7.5
@@ -1336,6 +1347,7 @@ packages:
       integrity: sha512-cYdcxXhgldJeOaWaN/mxT+j07XFZdR+qUqfz5eddx4WcyWCha66FfJvmQBOPqyQo1TCyj/IkgZqdGADWlNdTcQ==
 specifiers:
   '@types/node': ^13.1.8
+  '@types/ws': ^7.2.2
   '@typescript-eslint/eslint-plugin': ^2.16.0
   '@typescript-eslint/eslint-plugin-tslint': ^2.18.0
   '@typescript-eslint/parser': ^2.16.0
