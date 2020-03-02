@@ -34,6 +34,7 @@
   "homepage": "https://github.com/elias-knodel/draconis#readme",
   "devDependencies": {
     "@types/node": "^13.1.8",
+    "@types/ws": "^7.2.2",
     "@typescript-eslint/eslint-plugin": "^2.16.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.18.0",
     "@typescript-eslint/parser": "^2.16.0",
@@ -43,7 +44,7 @@
   },
   "dependencies": {
     "bufferutil": "^4.0.1",
-    "discord.js": "^11.5.1",
+    "discord.js": "^12.0.1",
     "dotenv": "^8.2.0",
     "erlpack": "^0.1.3",
     "ffmpeg": "^0.0.4",

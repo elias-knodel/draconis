@@ -1,4 +1,4 @@
-import { RichEmbed, Collection } from "discord.js";
+import { MessageEmbed, Collection } from "discord.js";
 
 module.exports.run = (bundle: any) => {
 
@@ -9,7 +9,7 @@ module.exports.run = (bundle: any) => {
   const customPrefix = bundle.prefixConfig[msg.member.guild.id];
   const defaultPrefix = bundle.botConfig.defaultPrefix;
 
-  const helpEmbed: RichEmbed = new RichEmbed();
+  const helpEmbed: MessageEmbed = new MessageEmbed();
   helpEmbed.setColor(bundle.botConfig.colors.red);
 
   if (customPrefix) {
