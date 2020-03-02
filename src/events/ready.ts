@@ -56,5 +56,7 @@ module.exports.run = (client: any) => {
 
   /* log output */
   console.log(output + "\n" + output2);
+  /* Add static line to show that the bot instance is now usable (needed for pterodactyl etc.) */
+  console.log("The Bot is now ready to use!")
 
 };
